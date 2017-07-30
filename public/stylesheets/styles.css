@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html {
+	height:100%;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+	background: #4096ee;
+	background: -moz-linear-gradient(45deg, #4096ee 0%, #40dfe8 75%);
+	background: -webkit-linear-gradient(45deg, #4096ee 0%,#40dfe8 75%);
+	background: linear-gradient(45deg, #4096ee 0%,#40dfe8 75%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#40dfe8',GradientType=1 );
+	color:#493843;
+}
+
+.wrapper {
+	max-width: 980px;
+	margin:0 auto;
+}
+
+.logo {
+	display: inline-block;
+	margin-right:4em;
+}
+
+.menu h2 {
+	display:inline-block;
+	font-style: italic;
+	font-size:36px;
+}
+.links {
+	display: inline-block;
+}
+.menu a {
+	color:#493843;
+	margin-right: .75em;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	font-weight:bold;
+	font-size:24px;
+}
+
+.menu a:after {
+	content: '';
+    display: block;
+    position: relative;
+    top: 5px;
+    width: 0;
+    height: 2px;
+    background: #DFD5A5;
+    transition: width .3s;
+}
+
+.menu a.active:after {
+	content: '';
+    display: block;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: 2px;
+    background: #DFD5A5;
+    transition: width .3s;
+}
+
+.menu a:hover::after {
+	width:100% !important;
+}
+
+.menu h2:after{
+	content:'';
+	width:100%;
+	display: block;
+    position: relative;
+    top: 5px;
+	height:2px;
+	background:linear-gradient(to right, #ECEBE4, #CC998D);
+}
+
+.content, .users {
+	margin:1.5em 0;
+}
+section {
+	overflow: hidden;
+}
+button {
+	background-color: inherit;
+	border:1px solid white;
+	border-radius: 6px;
+	font-family: inherit;
+	padding:6px 14px;
+	font-size:14px;
+	background-color:rgba(255,255,255,.55);
+	margin-top:1em;
+}
+
+button:hover{
+	cursor: pointer;
+	background-color:rgba(255,255,255,1);
+	transition:all .075s ease;
+}
+
+input[type=text]{
+	background-color:rgba(255,255,255,.65);
+}
+
+input[type=text]:focus {
+	background-color:rgba(255,255,255,1);
+	transition:all .15s linear;
+}
+
+.col {
+  margin-left: 1%; }
+
+.span2 {
+  width: 15.83333%; float:left;}
+
+.span3 {
+  width: 24.25%; float:left;}
+
+.span4 {
+  width: 32.66667%; float:left;}
+
+.span5 {
+  width: 41.08333%; float:left;}
+
+.span6 {
+  width: 49.5%; float:left;}
+
+.span7 {
+  width: 57.91667%; float:left;}
+
+.span8 {
+  width: 66.33333%; float:left;}
+
+.span9 {
+  width: 74.75%; float:left;}
+
+.span10 {
+  width: 83.16667%; float:left;}
+
+.span11 {
+  width: 91.58333%; float:left;}
+
+.span12 {
+  width: 100%; float:left;}
+
+.circle {
+	width:15px;
+	height:15px;
+	border-radius: 50%;
+	display: inline-block;
+}
+.circle.manager {
+	background-color: #CC998D;
+}
+.circle.user-circle {
+	background-color: #ECEBE4;
+}
+
+.color-code h4 {
+	display: inline-block;
+	margin-right:.45em;
+}
+
+.color-code{
+	text-align: center;
+	border:2px solid #493843;
+	border-radius: 6px;
+	padding:12px;
+}
+
+.is_manager {
+	color:#CC998D;
+}
+
+.is_user {
+	color:#ECEBE4;
+}
+
+.user h4, .user h2, .color-code div {
+	display: inline-block;
+}
+
+.user form {
+	float: right;
+	padding:0 8px;
+}
+
+.delete {
+	background-color:rgba(255,0,0,.55);
+	color:white;
+}
+
+.delete:hover {
+	background-color:rgba(255,0,0,1);
+}
+
+.update {
+	background-color:rgba(0,255,0,.35);
+}
+
+.update:hover {
+	background-color:rgba(0,255,0,1);
+}
+
+.user {
+	border-top: 2px white dotted;
+}
+
+.user:last-child{
+	border-bottom: 2px white dotted;
+}
+
+.none {
+	display: none;
+}

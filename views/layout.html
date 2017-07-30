@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User || Manager</title>
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+	<div class="main">
+		<div class="wrapper">
+			<section class="menu">
+				<div class="logo">
+					<h2><span style='color:#ECEBE4'>USER |</span><span style='color:#CC998D'>| MANAGER</span></h2>
+				</div>
+				<div class="links">
+					<a class="{{ 'active' if usr}}" href="/users/">Users</a>
+					<a class="{{ 'active' if mg}}" href="/users/managers">Managers</a>
+				</div>
+			</section>
+
+			<section class="content">
+				{%block content%}{% endblock %}
+			</section>
+		</div>
+	</div>
+</body>
+</html>

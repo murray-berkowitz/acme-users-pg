@@ -1,0 +1,40 @@
+{% extends 'layout.html'%}
+{% block content%}
+	<section class="form">
+		<div class="span12">
+			<div class="span7">
+				<form action="/users" method="POST">
+					<input type="text" name='name' placeholder='User Name' onfocus="this.placeholder = ''">
+					<label for="is_manager"><input type="checkbox" name='is_manager'> Manager?</label>
+					<br/>
+					<button>Add User</button>
+				</form>
+			</div>
+			<div class="span5 col">
+				<div class="span5 color-code">
+					<div><div class="circle manager"></div>
+					<h4>Manager</h4></div>
+					<div><div class="circle user-circle"></div>
+					<h4>User</h4></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="users">
+	{% for user in users%}
+		<div class="user">
+			<h4>{{loop.index}})</h4>
+			<h2 class="{{'is_manager' if user.is_manager else 'is_user'}}">{{user.name}}</h2>
+			<!--<h4>{{'Manager' if user.is_manager}}</h4>-->
+			{% if user.is_manager == false %}
+				<form method='POST' style='display:inline-block;' action="/users/{{user.id}}?_method=DELETE">
+					<button class="delete">DELETE</button>
+				</form>
+				<form style='display:inline-block;' action="/users/{{user.id}}?_method=PUT" method='POST'>
+					<button class="update">Make Manager</button>
+				</form>
+			{% endif %}
+		</div>
+	{% endfor %}
+	</section>
+{% endblock %}

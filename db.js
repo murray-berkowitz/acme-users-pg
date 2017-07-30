@@ -35,7 +35,6 @@ function seed(cb){
 				if(err){
 					return cb(err);
 				}
-				console.log(id);
 				cb(null);
 			});
 		});
@@ -79,6 +78,24 @@ function deleteUser(id, cb){
 	})
 }
 
+function makeManager(id, cb){
+	query('UPDATE users SET is_manager = true WHERE id=$1', [id], function(err,result){
+		if(err){
+			cb(err);
+		}
+		cb(null);
+	})
+}
+
+function removeAsManager(id, cb){
+	query('UPDATE users SET is_manager = false WHERE id=$1', [id], function(err,result){
+		if(err){
+			cb(err);
+		}
+		cb(null);
+	})
+}
+
 
 module.exports = {
 	sync,
@@ -86,5 +103,7 @@ module.exports = {
 	createUser,
 	getUsers,
 	getManagers,
-	deleteUser
+	deleteUser,
+	makeManager,
+	removeAsManager
 };
