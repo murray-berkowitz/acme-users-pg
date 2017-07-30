@@ -15,6 +15,10 @@ router.get('/', function(req,res,next){
 });
 
 router.post('/', function(req,res,next){
+	if(req.body.name == ''){
+		var error = 'Empty Form';
+		res.render('error', error);
+	}
 	var is_manager = req.body.is_manager || false;
 	db.createUser(req.body, function(err){
 		if(err){
